@@ -176,62 +176,104 @@ const UserModal = ({ open, onClose, userId }) => {
                   />
                 </div>
                 <div className={classes.multFieldLine}>
-                  <Field
-                    as={TextField}
-                    label={i18n.t("userModal.form.email")}
-                    name="email"
-                    error={touched.email && Boolean(errors.email)}
-                    helperText={touched.email && errors.email}
-                    variant="outlined"
-                    margin="dense"
-                    fullWidth
-                  />
-                  <FormControl
-                    variant="outlined"
-                    className={classes.formControl}
-                    margin="dense"
-                  >
-                    <Can
-                      role={loggedInUser.profile}
-                      perform="user-modal:editProfile"
-                      yes={() => (
-                        <>
-                          <InputLabel id="profile-selection-input-label">
-                            {i18n.t("userModal.form.profile")}
-                          </InputLabel>
+                                    <Field
+                                        as={TextField}
+                                        label={i18n.t("userModal.form.email")}
+                                        name="email"
+                                        error={
+                                            touched.email &&
+                                            Boolean(errors.email)
+                                        }
+                                        helperText={
+                                            touched.email && errors.email
+                                        }
+                                        variant="outlined"
+                                        margin="dense"
+                                        fullWidth
+                                    />
+                                </div>
+                                <div className={classes.multFieldLine}>
+                                    <FormControl
+                                        variant="outlined"
+                                        className={classes.formControl}
+                                        margin="dense"
+                                    >
+                                        <Can
+                                            role={loggedInUser.profile}
+                                            perform="user-modal:editProfile"
+                                            yes={() => (
+                                                <>
+                                                    <InputLabel id="profile-selection-input-label">
+                                                        {i18n.t(
+                                                            "userModal.form.profile"
+                                                        )}
+                                                    </InputLabel>
 
-                          <Field
-                            as={Select}
-                            label={i18n.t("userModal.form.profile")}
-                            name="profile"
-                            labelId="profile-selection-label"
-                            id="profile-selection"
-                            required
-                          >
-                            <MenuItem value="admin">Admin</MenuItem>
-                            <MenuItem value="user">User</MenuItem>
-                          </Field>
-                        </>
-                      )}
-                    />
-                  </FormControl>
-                </div>
-
-                <Field
-                  as={Select}
-                  label={i18n.t("userModal.form.status")}
-                  name="status"
-                  variant="outlined"
-                  margin="dense"
-                  fullWidth
-                >
-                  <MenuItem value="Ativo">
-                    {i18n.t("userModal.form.active")}
-                  </MenuItem>
-                  <MenuItem value="Inativo">
-                    {i18n.t("userModal.form.inactive")}
-                  </MenuItem>
-                </Field>
+                                                    <Field
+                                                        as={Select}
+                                                        label={i18n.t(
+                                                            "userModal.form.profile"
+                                                        )}
+                                                        name="profile"
+                                                        labelId="profile-selection-label"
+                                                        id="profile-selection"
+                                                        required
+                                                    >
+                                                        <MenuItem value="admin">
+                                                            Admin
+                                                        </MenuItem>
+                                                        <MenuItem value="user">
+                                                            User
+                                                        </MenuItem>
+                                                    </Field>
+                                                </>
+                                            )}
+                                        />
+                                    </FormControl>
+                                </div>
+                                <div className={classes.multFieldLine}>
+                                    <FormControl
+                                        variant="outlined"
+                                        className={classes.formControl}
+                                        margin="dense"
+                                        fullWidth
+                                    >
+                                        <Can
+                                            role={loggedInUser.profile}
+                                            perform="user-modal:editProfile"
+                                            yes={() => (
+                                                <>
+                                                    <InputLabel id="profile-selection-input-label">
+                                                        {i18n.t(
+                                                            "userModal.form.status"
+                                                        )}
+                                                    </InputLabel>
+                                                    <Field
+                                                        as={Select}
+                                                        label={i18n.t(
+                                                            "userModal.form.status"
+                                                        )}
+                                                        name="status"
+                                                        variant="outlined"
+                                                        margin="dense"
+                                                        fullWidth
+                                                    >
+                                                        <MenuItem value="Ativo">
+                                                            {i18n.t(
+                                                                "userModal.form.active"
+                                                            )}
+                                                        </MenuItem>
+                                                        <MenuItem value="Inativo">
+                                                            {i18n.t(
+                                                                "userModal.form.inactive"
+                                                            )}
+                                                        </MenuItem>
+                                                    </Field>
+                                                </>
+                                            )}
+                                        />
+                                    </FormControl>
+                                </div>
 
                 <Can
                   role={loggedInUser.profile}
