@@ -297,7 +297,7 @@ const messages = {
           email: "Email",
           password: "Senha",
           profile: "Perfil",
-          profile: "Perfil",
+          inactive: "Inativo",
           active: "Ativo",
           status: "Status",
           whatsapp: "Conexão Padrão"
